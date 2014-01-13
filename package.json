@@ -1,5 +1,6 @@
 {
-  "name": "AngularTeleport",
+  "name": "angular teleport",
+  "buildName": "angular-teleport",
   "version": "0.1.0",
   "description": "Transclude a piece of HTML from the DOM whilst retaining the original scope.",
   "main": "index.js",
@@ -14,5 +15,11 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/Wildhoney/AngularTeleport/issues"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-concat": "~0.3.0"
   }
 }
