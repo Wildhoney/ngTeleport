@@ -56,7 +56,10 @@
 
         return function (sourceContainer, targetContainer, options) {
 
-            var scope        = (options.retainScope === true) ? sourceContainer.scope() : targetContainer.scope(),
+            // Determine whether we should inherit the scope or not.
+            var inheritScope = (options && options.retainScope);
+
+            var scope        = (inheritScope) ? sourceContainer.scope() : targetContainer.scope(),
                 reference    = sourceContainer.attr('ng-teleport'),
                 html         = _teleportable[reference + sourceContainer.scope().$id],
                 interpolated = $interpolate(html)(scope),
@@ -66,11 +69,11 @@
             // Update the `_teleportable` to include this one.
             _teleportable[reference + scope.$id] = html;
 
-            if (options.duplicate !== false) {
+            if (!options || (options.duplicate || false) === false) {
                 sourceContainer.remove();
             }
 
-            targetContainer[options.insertion || 'append'](compiled);
+            targetContainer[options && options.insertion || 'append'](compiled);
 
         };
 

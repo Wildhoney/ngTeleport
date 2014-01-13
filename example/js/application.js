@@ -38,9 +38,9 @@
                         target = angular.element($window.document.querySelector(className));
 
                     teleport(source, target, {
-                        duplicate: true,
+                        duplicate: false,
                         retainScope: false,
-                        insertion: 'prepend'
+                        insertion: 'append'
                     });
 
                 });
