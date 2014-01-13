@@ -1,0 +1,17 @@
+{
+  "name": "AngularTeleport",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Wildhoney/AngularTeleport",
+  "authors": [
+    "Adam Timberlake <adam.timberlake@gmail.com>"
+  ],
+  "description": "Transclude a piece of HTML from the DOM whilst retaining the original scope.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
