@@ -23,7 +23,7 @@
     /**
      * @directive button
      */
-    app.directive('button', function move($window, teleport, $templateCache) {
+    app.directive('button', function move($window, teleport) {
 
         return {
             restrict: 'E',
