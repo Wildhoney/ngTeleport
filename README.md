@@ -31,21 +31,25 @@ Options
     <tr>
         <th>Option</th>
         <th>Type</th>
+        <th>Default</th>
         <th>Result</th>
     </tr>
     <tr>
         <td><code>duplicate</code></td>
         <td><code>Boolean</code></td>
+        <td><code>false</code></td>
         <td>Instead of removing the source DOM it instead creates a copy of it.</td>
     </tr>
     <tr>
         <td><code>retainScope</code></td>
         <td><code>Boolean</code></td>
+        <td><code>false</code></td>
         <td>Retain the original scope of the node even though it's a child of another scope &ndash; not recommended due to complexity).</td>
     </tr>
     <tr>
         <td><code>insertion</code></td>
         <td><code>String</code></td>
+        <td><code>append</code></td>
         <td>Can either be <code>append</code> or <code>prepend</code> depending on what you're looking for.</td>
     </tr>
 </table>
