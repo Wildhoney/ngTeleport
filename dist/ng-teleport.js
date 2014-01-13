@@ -70,7 +70,7 @@
                 sourceContainer.remove();
             }
 
-            targetContainer.append(compiled);
+            targetContainer[options.insertion || 'append'](compiled);
 
         };
 
