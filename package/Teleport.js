@@ -1,0 +1,73 @@
+(function($angular) {
+
+    "use strict";
+
+    /**
+     * @property teleportable
+     * @type {Object}
+     * @private
+     */
+    var _teleportable = {};
+
+    /**
+     * @module ngTeleport
+     * @author Adam Timberlake
+     */
+    var ngTeleport = $angular.module('ngTeleport', []);
+
+    /**
+     * @directive ngTeleport
+     * @return {Object}
+     */
+    ngTeleport.directive('ngTeleport', function teleportDirective() {
+
+        return {
+            restrict: 'EA',
+
+            link: function(scope, element, attributes) {
+
+                var reference = attributes.ngTeleport;
+
+                if (_teleportable[scope.$id]) {
+                    return;
+                }
+
+                // Update the `_teleportable` if we don't already have it from the service below.
+                _teleportable[reference + scope.$id] = element.wrap('<p/>').parent().html();
+
+            }
+        }
+
+    });
+
+    /**
+     * @service teleport
+     * @param $compile {Function}
+     * @param $interpolate {Function}
+     * @return {Function}
+     */
+    ngTeleport.service('teleport', ['$compile', '$interpolate', function teleportService($compile, $interpolate) {
+
+        return function (sourceContainer, targetContainer, options) {
+
+            var scope        = (options.retainScope === true) ? sourceContainer.scope() : targetContainer.scope(),
+                reference    = sourceContainer.attr('ng-teleport'),
+                html         = _teleportable[reference + sourceContainer.scope().$id],
+                interpolated = $interpolate(html)(scope),
+                element      = angular.element(interpolated),
+                compiled     = $compile(element)(scope);
+
+            // Update the `_teleportable` to include this one.
+            _teleportable[reference + scope.$id] = html;
+
+            if (options.duplicate !== false) {
+                sourceContainer.remove();
+            }
+
+            targetContainer.append(compiled);
+
+        };
+
+    }]);
+
+})(window.angular);

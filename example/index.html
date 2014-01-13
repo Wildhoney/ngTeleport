@@ -4,7 +4,9 @@
     <title>Angular Teleport</title>
 
     <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <script type="text/javascript" src="../bower_components/jquery/jquery.js"></script>
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../package/Teleport.js"></script>
     <script type="text/javascript" src="js/application.js"></script>
 </head>
 <body ng-app="exampleApp">
@@ -12,8 +14,13 @@
     <div class="first scope" ng-controller="FirstController">
         <h2>First Scope &ndash; ID: {{$id}}</h2>
 
-        <div class="counter">
-            Counter &ndash; ID: {{$id}}
+        <div class="counter" ng-teleport="firstCounter">
+            Counter #1 &ndash; ID: {{$id}} called {{name}}
+            <button>Move Across</button>
+        </div>
+
+        <div class="counter" ng-teleport="secondCounter">
+            Counter #2 &ndash; ID: {{$id}} called {{name}}
             <button>Move Across</button>
         </div>
 

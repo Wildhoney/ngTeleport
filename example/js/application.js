@@ -1,43 +1,45 @@
 !(function($angular) {
 
-    var app = $angular.module('exampleApp', []);
+    var app = $angular.module('exampleApp', ['ngTeleport']);
 
     /**
      * @controller FirstController
      */
     app.controller('FirstController', function($scope) {
 
-        $scope.moveAcross = function moveAcross(element) {
-            alert(element);
-        }
+        $scope.name = 'First';
 
     });
 
     /**
      * @controller SecondController
      */
-    app.controller('SecondController', function() {
+    app.controller('SecondController', function($scope) {
+
+        $scope.name = 'Second';
 
     });
 
     /**
      * @directive button
      */
-    app.directive('button', function move($window) {
+    app.directive('button', function move($window, teleport, $templateCache) {
 
         return {
             restrict: 'E',
 
-            link: function link(scope, element, attributes) {
+            link: function link(scope, element) {
 
                 element.bind('click', function onClick() {
 
-                    var sourceContainer = element.parent(),
-                        targetContainer = angular.element($window.document.querySelector('.second'));
+                    var className = (element.closest('.scope').hasClass('second') ? '.first' : '.second');
 
-                    teleport({
-                        from: sourceContainer,
-                        to: targetContainer
+                    var source = element.parent(),
+                        target = angular.element($window.document.querySelector(className));
+
+                    teleport(source, target, {
+                        duplicate: true,
+                        retainScope: false
                     });
 
                 });
