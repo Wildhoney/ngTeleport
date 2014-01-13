@@ -1,7 +1,7 @@
 ngTeleport
 ===============
 
-<img src="https://travis-ci.org/Wildhoney/ngTeleport.js.png?branch=master" />
+<img src="https://travis-ci.org/Wildhoney/ngTeleport.png?branch=master" />
 &nbsp;
 <img src="https://badge.fury.io/js/ng-teleport.png" />
 
