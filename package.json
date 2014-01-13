@@ -1,6 +1,6 @@
 {
-  "name": "angular teleport",
-  "buildName": "angular-teleport",
+  "name": "ng teleport",
+  "buildName": "ng-teleport",
   "version": "0.1.0",
   "description": "Transclude a piece of HTML from the DOM whilst retaining the original scope.",
   "main": "index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wildhoney/AngularTeleport.git"
+    "url": "https://github.com/Wildhoney/ngTeleport.git"
   },
   "author": "Adam Timberlake <adam.timberlake@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/Wildhoney/AngularTeleport/issues"
+    "url": "https://github.com/Wildhoney/ngTeleport/issues"
   },
   "dependencies": {
     "grunt": "~0.4.2",
