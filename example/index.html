@@ -9,12 +9,18 @@
 </head>
 <body ng-app="exampleApp">
 
-    <div class="first scope">
-        <h2>First Scope</h2>
+    <div class="first scope" ng-controller="FirstController">
+        <h2>First Scope &ndash; ID: {{$id}}</h2>
+
+        <div class="counter">
+            Counter &ndash; ID: {{$id}}
+            <button>Move Across</button>
+        </div>
+
     </div>
 
-    <div class="second scope">
-        <h2>Second Scope</h2>
+    <div class="second scope" ng-controller="SecondController">
+        <h2>Second Scope &ndash; ID: {{$id}}</h2>
     </div>
 
 </body>

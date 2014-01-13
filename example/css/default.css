@@ -15,6 +15,14 @@ div.scope h2 {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
 }
 
+div.scope div.counter {
+    margin-top: 10px;
+    font-family: Arial, Tahoma, Helvetica, sans-serif;
+    font-size: 14px;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
+}
+
 div.scope.first {
     background-color: lightcoral;
 }
