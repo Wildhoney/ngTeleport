@@ -1,5 +1,5 @@
 {
-  "name": "ng teleport",
+  "name": "ng-teleport",
   "buildName": "ng-teleport",
   "version": "0.1.0",
   "description": "Transclude a piece of HTML from the DOM whilst retaining the original scope.",
