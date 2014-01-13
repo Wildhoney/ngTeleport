@@ -28,7 +28,13 @@
 
                 var reference = attributes.ngTeleport;
 
-                if (_teleportable[scope.$id]) {
+                if (!reference) {
+                    // Ensure the developer has defined a unique identifier on the `ngTeleport` attribute.
+                    throw 'Attribute `ngTeleport` requires a unique name per scope.';
+                }
+
+                if (_teleportable[reference + scope.$id]) {
+                    // Don't continue if we already have this element.
                     return;
                 }
 
