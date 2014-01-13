@@ -39,7 +39,8 @@
 
                     teleport(source, target, {
                         duplicate: true,
-                        retainScope: false
+                        retainScope: false,
+                        insertion: 'prepend'
                     });
 
                 });
