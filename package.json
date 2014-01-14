@@ -2,7 +2,7 @@
   "name": "ng-teleport",
   "buildName": "ng-teleport",
   "version": "0.1.1",
-  "description": "Transclude a piece of HTML from the DOM whilst retaining the original scope.",
+  "description": "Move a section of the DOM and inherit the scope of the target node.",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
