@@ -9,26 +9,32 @@
     <script type="text/javascript" src="../package/Teleport.js"></script>
     <script type="text/javascript" src="js/application.js"></script>
 </head>
-<body ng-app="exampleApp">
+<body>
 
-    <div class="first scope" ng-controller="FirstController">
-        <h2>First Scope &ndash; ID: {{$id}}</h2>
+    <section ng-app="exampleApp">
 
-        <div class="counter" ng-teleport="firstCounter">
-            Counter #1 &ndash; ID: {{$id}} called {{name}}
-            <button>Move Across</button>
+        <div class="first scope" ng-controller="FirstController">
+            <h2>First Scope &ndash; ID: {{$id}}</h2>
+
+            <div class="counter" ng-teleport="firstCounter">
+                Counter #1 &ndash; ID: {{$id}} called {{name}}
+                <button>Move Across</button>
+            </div>
+
+            <div class="counter" ng-teleport="secondCounter">
+                Counter #2 &ndash; ID: {{$id}} called {{name}}
+                <button>Move Across</button>
+            </div>
+
         </div>
 
-        <div class="counter" ng-teleport="secondCounter">
-            Counter #2 &ndash; ID: {{$id}} called {{name}}
-            <button>Move Across</button>
+        <div class="second scope" ng-controller="SecondController">
+            <h2>Second Scope &ndash; ID: {{$id}}</h2>
         </div>
 
-    </div>
+    </section>
 
-    <div class="second scope" ng-controller="SecondController">
-        <h2>Second Scope &ndash; ID: {{$id}}</h2>
-    </div>
+    <div class="non-scope"></div>
 
 </body>
 </html>

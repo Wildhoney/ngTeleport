@@ -63,6 +63,14 @@
             var scope        = (inheritScope) ? sourceContainer.scope() : targetContainer.scope(),
                 reference    = sourceContainer.attr('ng-teleport');
 
+            if (!targetContainer.scope()) {
+
+                // Notify the developer they're attempting to teleport the node into a container
+                // that doesn't possess an Angular scope.
+                throw 'ngTeleport: Attempting to teleport into a null scoped node.';
+
+            }
+
             if (!reference) {
 
                 // Notify the developer they're trying to teleport a non-teleportable node.
