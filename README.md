@@ -24,6 +24,13 @@ With the above code `section` is now all ready to be teleported anywhere in the 
 teleport(sectionElement, someOtherNode);
 ```
 
+Uses Case
+---------------
+
+When using `ngTeleport` it's crucial that you don't over-complicate your code. Remember that there might always be a better solution for doing what you want to do.
+
+One prominent use case that `ngTeleport` is in a responsive design &ndash; upon changing the browser window, you may want to shuffle the DOM elements around based on media queries, which is precisely what `ngTeleport` allows you to do in an Angular environment.
+
 Options
 ---------------
 
