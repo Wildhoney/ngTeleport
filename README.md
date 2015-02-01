@@ -9,6 +9,8 @@ Example: http://wildhoney.io/ng-teleport/example/
 
 All in all, `ngTeleport` has similar functionality to `ngTransclude`, but `ngTeleport` allows you to uproot a piece of the DOM and place it elsewhere. However, `ngTeleport` is entirely Angular.js aware and therefore sets up the scope and interpolation for you.
 
+**Note:** Using `ngTeleport` to move elements around the DOM for responsiveness is no longer recommended &ndash; [use Flexbox](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes) instead. For cases where you require the same functionality for [non-supported browsers](http://caniuse.com/#search=flexbox) explain to your CTO that complicating the codebase's architecture to support a handful of antiquated browsers is absurd.
+
 Getting Started
 ---------------
 
