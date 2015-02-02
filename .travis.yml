@@ -2,12 +2,21 @@ language: node_js
 
 node_js:
    - "0.10"
+   - "0.11"
 
 before_script:
-  - npm -q install
-  - npm -q install -g bower
-  - npm -q install -g grunt-cli
+  - npm install
   - bower install
-
-script:
   - grunt test
+  - grunt build
+
+deploy:
+  provider: heroku
+  strategy: api
+  all_branches: true
+  skip_cleanup: true
+  api_key:
+    secure: Neo4Z2s7QoF8HGp1suBeNfzhrqqDrShd7gzDShY+j9JpzMXQyVQqVWeHnZow1unBJ6ram2Aav5Z8thdzsE3of5ArE5d/SecqsnnS0rSilVXwTqk4kUIDUfN2I3+WGvoEzqagzja3eeV1FfW0MCohmlzK9whyKBfug4TzhxVvCsE=
+  app: ng-teleport
+  on:
+    repo: Wildhoney/ngTeleport

@@ -5,7 +5,7 @@ ngTeleport
 &nbsp;
 <img src="https://badge.fury.io/js/ng-teleport.png" />
 
-Example: http://wildhoney.io/ng-teleport/example/
+Example: https://ng-teleport.herokuapp.com/
 
 All in all, `ngTeleport` has similar functionality to `ngTransclude`, but `ngTeleport` allows you to uproot a piece of the DOM and place it elsewhere. However, `ngTeleport` is entirely Angular.js aware and therefore sets up the scope and interpolation for you.
 

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             },
             build: {
                 src: 'package/Teleport.js',
-                dest: 'dist/<%= pkg.buildName %>.min.js'
+                dest: 'dist/<%= pkg.name %>.min.js'
             }
         },
         concat: {
@@ -25,7 +25,11 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: 'package/Teleport.js',
-                dest: 'dist/<%= pkg.buildName %>.js'
+                dest: 'dist/<%= pkg.name %>.js'
+            },
+            vendor: {
+                src: 'package/Teleport.js',
+                dest: 'example/js/vendor/<%= pkg.name %>/<%= pkg.name %>.js'
             }
         }
     });
@@ -36,6 +40,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('build', ['jshint', 'concat', 'uglify']);
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['test' ,'build']);
 
 };
